@@ -1,0 +1,4 @@
+﻿  main.cpp
+C:\Users\User\source\repos\Project1\Project1\main.cpp(369,5): warning C4305: 'initializing': truncation from 'double' to 'const GLfloat'
+LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
+  Project1.vcxproj -> C:\Users\User\source\repos\Project1\x64\Debug\Project1.exe
