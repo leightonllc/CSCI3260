@@ -2,11 +2,12 @@
 
  - Name: Lau Long Ching 		
  - Student ID:	1155127347
-![enter image description here](day.png)
- This is a Japanese rock garden (枯山水, karesansui), often called a zen  garden, which creates a miniature stylized landscape through carefully composed arrangements of rocks, water features, moss, pruned trees and
- bushes, and uses gravel or sand that is raked to represent ripples in water.
 
- In this zen garden, you can engage in a spiritual journey by a meandering walk to the center of the labyrinth and find your inner zen. Use the arrow key to control the little rock on the ground.
+![enter image description here](day.png)
+
+This is a Japanese rock garden (枯山水, karesansui), often called a zen  garden, which creates a miniature stylized landscape through carefully composed arrangements of rocks, water features, moss, pruned trees and bushes, and uses gravel or sand that is raked to represent ripples in water.
+
+In this zen garden, you can engage in a spiritual journey by a meandering walk to the center of the labyrinth and find your inner zen. Use the arrow key to control the little rock on the ground.
 
 Manipulation:
 Key "d" : Switch between day and night.
@@ -25,7 +26,7 @@ changing the focal length of a camera, except that the screen size changes for a
 
 
 Grading rubics checklist:
--------------------------
+-----
 Basic (80%)
 
 Draw at least one 2D object and two 3D objects. 25%
@@ -47,7 +48,7 @@ Perspective projection (given). 10%
 Depth test. 5%
 --- Enabled.
 
--------------------------
+-----
 Advanced (at most 20%)
 
 Complex and meaningful objects and scenes constructed by different 
