@@ -163,6 +163,9 @@ Texture Penguin_texture[2];
 Model Snow_obj;
 GLuint Snow_vao, Snow_vbo, Snow_ebo;
 Texture Snow_texture[2];
+Model Penguin2_obj;
+GLuint Penguin2_vao, Penguin2_vbo, Penguin2_ebo;
+Texture Penguin2_texture;
 Shader shader;
 
 int PenguinTexture = 1;
@@ -221,11 +224,36 @@ void Snow_bind()
 	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
 }
 
+void Penguin2_bind()
+{
+	Penguin2_texture.setupTexture("resources/penguin/penguin2.jpg");
+	Penguin2_obj = loadOBJ("resources/penguin/penguin.obj");
+
+	glGenVertexArrays(1, &Penguin2_vao);
+	glBindVertexArray(Penguin2_vao);
+
+	glGenBuffers(1, &Penguin2_vbo);
+	glBindBuffer(GL_ARRAY_BUFFER, Penguin2_vbo);
+	glBufferData(GL_ARRAY_BUFFER, Penguin2_obj.vertices.size() * sizeof(Vertex), &Penguin2_obj.vertices[0], GL_STATIC_DRAW);
+
+	glGenBuffers(1, &Penguin2_ebo);
+	glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, Penguin2_ebo);
+	glBufferData(GL_ELEMENT_ARRAY_BUFFER, Penguin2_obj.indices.size() * sizeof(unsigned int), &Penguin2_obj.indices[0], GL_STATIC_DRAW);
+
+	glEnableVertexAttribArray(0);
+	glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, position));
+	glEnableVertexAttribArray(1);
+	glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, uv));
+	glEnableVertexAttribArray(2);
+	glVertexAttribPointer(2, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)offsetof(Vertex, normal));
+}
+
 
 void sendDataToOpenGL()
 {
 	Penguin_bind();
 	Snow_bind();
+	Penguin2_bind();
 }
 
 void initializedGL(void) //run only once
@@ -389,6 +417,20 @@ void paintGL(void)  //always run
 	modelTransformMatrixUniformLocation = glGetUniformLocation(shader.Return_ID(), "modelTransformMatrix");
 	glUniformMatrix4fv(modelTransformMatrixUniformLocation, 1, GL_FALSE, &modelTransformMatrix[0][0]);
 	glDrawElements(GL_TRIANGLES, Snow_obj.indices.size(), GL_UNSIGNED_INT, 0);
+
+	// penguin2
+	
+	TextureID = glGetUniformLocation(shader.Return_ID(), "myTextureSampler");
+	glActiveTexture(GL_TEXTURE0);
+	Penguin2_texture.bind(0);
+	glUniform1i(TextureID, 0);
+
+	glBindVertexArray(Penguin2_vao);
+	modelTransformMatrix = glm::scale(modelTransformMatrix, glm::vec3(5.0f, 1.0f, 5.0f));
+	modelTransformMatrix = glm::translate(modelTransformMatrix, glm::vec3(0.f, +1.f, +1.f));
+	modelTransformMatrixUniformLocation = glGetUniformLocation(shader.Return_ID(), "modelTransformMatrix");
+	glUniformMatrix4fv(modelTransformMatrixUniformLocation, 1, GL_FALSE, &modelTransformMatrix[0][0]);
+	glDrawElements(GL_TRIANGLES, Penguin2_obj.indices.size(), GL_UNSIGNED_INT, 0);
 
 
 
