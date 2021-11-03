@@ -7,6 +7,7 @@ Name: Lau Long Ching
 Student ID: 1155127347
 
 Resident Evil Penguin - This penguin has just escaped from the laboratory! It probably contains virus from an unknown country.
+Help it to hop on the penguin spaceship!
 
 ![enter image description here](demo.png)
 
