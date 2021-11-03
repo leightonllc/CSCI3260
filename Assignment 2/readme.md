@@ -55,7 +55,7 @@ Object control 10%
 Bonus Task (20%)
 
 Load more complex models and map other textures onto them to form a meaningful scene as you like. (10%)
--- Cages for the scene
+-- Penguin spaceship with iron texture
 Use different types of lighting sources to make meaningful scenes, such as the combination of Pointlight, Spotlight, etc. (10%)
 -- Red lights
 Shadow mapping on the complex models. (10%)
