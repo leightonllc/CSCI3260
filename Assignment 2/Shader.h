@@ -9,7 +9,7 @@ class Shader {
 public:
 	void setupShader(const char* vertexPath, const char* fragmentPath);
 	void use() const;
-
+	unsigned int Return_ID();
 	// a series utilities for setting shader parameters 
 	void setMat4(const std::string& name, glm::mat4& value) const;
 	void setVec4(const std::string& name, glm::vec4 value) const;

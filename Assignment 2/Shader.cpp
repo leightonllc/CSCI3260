@@ -77,6 +77,10 @@ void Shader::setInt(const std::string& name, int value) const
 	glUniform1i(glGetUniformLocation(ID, name.c_str()), value);
 }
 
+unsigned int Shader::Return_ID()
+{
+	return ID;
+}
 std::string Shader::readShaderCode(const char* fileName) const
 {
 	std::ifstream myInput(fileName);
